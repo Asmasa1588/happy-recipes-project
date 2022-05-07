@@ -1,0 +1,10 @@
+{
+    "recipes": [
+        {
+            "id": 1,
+            "title": "recipe title",
+            "content": "recipe content",
+            "img": "https://www.cookingwithnart.com/wp-content/uploads/2020/03/Raspberry-Lime-Vodka-Cocktail-1.jpg"
+        }
+    ]
+}
