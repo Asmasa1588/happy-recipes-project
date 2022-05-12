@@ -11,6 +11,38 @@
       <input id="recipe-filter" />
 
       <ul id="recipes-container"></ul>
+      <div>
+        <h2>Create a Recipe</h2>
+        <form id="create-recipe-form">
+          <div>
+            <label>Title</label>
+            <input
+              id="recipe-title-input"
+              type="text"
+              placeholder="Add a title"
+            />
+          </div>
+          <div>
+            <label>Content</label>
+
+            <textarea
+              id="recipe-content-input"
+              placeholder="Add a content"
+            ></textarea>
+          </div>
+          <div>
+            <label>RecipeUrl</label>
+            <input
+              id="recipe-image-input"
+              type="text"
+              placeholder="Add an url"
+            />
+          </div>
+          <div>
+            <input type="submit" />
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="index.js"></script>
