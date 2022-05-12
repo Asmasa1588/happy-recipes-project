@@ -41,6 +41,19 @@ const main = () => {
     console.log({ event: event.target.value });
     fetchBy(event.target.value);
   });
+  const handleRecipeCreation = (event) => {
+    event.preventDefault();
+    const title = document.getElementById("recipe-title-input");
+    const content = document.getElementById("recipe-content-input");
+    const image = document.getElementById("recipe-image-input");
+    console.log({
+      title: title.value,
+      content: content.value,
+      image: image.value,
+    });
+  };
+  const createDrinkForm = document.getElementById("create-recipe-form");
+  createDrinkForm.addEventListener("submit", handleRecipeCreation);
 };
 
 document.addEventListener("DOMContentLoaded", init);
