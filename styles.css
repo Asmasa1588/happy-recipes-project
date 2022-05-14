@@ -2,3 +2,6 @@
   cursor: pointer;
   color: red;
 }
+#edit-recipe {
+  display: none;
+}
