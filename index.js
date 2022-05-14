@@ -51,8 +51,28 @@ const main = () => {
       content: content.value,
       image: image.value,
     });
+    const dataToSend = {
+      title: title.value,
+      content: content.value,
+      image: image.value,
+    };
+    fetch("http://localhost:3000/recipes", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(dataToSend),
+    })
+      .then((res) => res.json())
+      .then((createdRecipe) => {
+        console.log({ createdRecipe });
+        renderRecipe(createdRecipe);
+      });
   };
+
   const createDrinkForm = document.getElementById("create-recipe-form");
+
   createDrinkForm.addEventListener("submit", handleRecipeCreation);
 };
 
