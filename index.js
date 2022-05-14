@@ -17,6 +17,7 @@ const main = () => {
     if (shouldRenderRecipe) {
       const liElement = document.createElement("li");
       liElement.innerHTML = recipe.title;
+      liElement.classList.add("recipe-item")
       recipesContainer.appendChild(liElement);
     }
   };
