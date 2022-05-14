@@ -20,7 +20,6 @@ const main = () => {
       liElement.innerHTML = recipe.title;
       liElement.classList.add("recipe-item");
       liElement.addEventListener("click", () => {
-        console.log({ recipe });
         const editRecipesContainer = document.getElementById("edit-recipe");
         editRecipesContainer.style.display = "block";
         const editTitle = document.getElementById("show-recipe-title-input");
@@ -56,7 +55,6 @@ const main = () => {
   fetchBy();
   const recipeFilter = document.getElementById("recipe-filter");
   recipeFilter.addEventListener("change", (event) => {
-    console.log({ event: event.target.value });
     fetchBy(event.target.value);
   });
   const handleRecipeCreation = (event) => {
