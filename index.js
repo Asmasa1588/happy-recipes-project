@@ -11,13 +11,31 @@ const init = () => {
 const main = () => {
   //The core of the project
   const recipesContainer = document.getElementById("recipes-container");
+
   const renderRecipe = (recipe, filterText) => {
     const shouldRenderRecipe =
       (filterText && recipe.title.includes(filterText)) || !filterText;
     if (shouldRenderRecipe) {
       const liElement = document.createElement("li");
       liElement.innerHTML = recipe.title;
-      liElement.classList.add("recipe-item")
+      liElement.classList.add("recipe-item");
+      liElement.addEventListener("click", () => {
+        console.log({ recipe });
+        const editRecipesContainer = document.getElementById("edit-recipe");
+        editRecipesContainer.style.display = "block";
+        const editTitle = document.getElementById("show-recipe-title-input");
+        const editContent = document.getElementById(
+          "show-recipe-content-input"
+        );
+        const editUrl = document.getElementById("show-recipe-image-input");
+        const imageToDisplayElement =
+          document.getElementById("image-to-display");
+        editTitle.value = recipe.title;
+        editContent.value = recipe.content;
+        editUrl.value = recipe.img;
+        imageToDisplayElement.setAttribute("src", recipe.img);
+      });
+
       recipesContainer.appendChild(liElement);
     }
   };
