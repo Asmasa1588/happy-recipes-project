@@ -11,6 +11,11 @@ const init = () => {
 const main = () => {
   //The core of the project
   const recipesContainer = document.getElementById("recipes-container");
+  const editRecipesContainer = document.getElementById("edit-recipe");
+
+  const editTitle = document.getElementById("show-recipe-title-input");
+  const editContent = document.getElementById("show-recipe-content-input");
+  const editUrl = document.getElementById("show-recipe-image-input");
 
   const renderRecipe = (recipe, filterText) => {
     const shouldRenderRecipe =
@@ -20,13 +25,7 @@ const main = () => {
       liElement.innerHTML = recipe.title;
       liElement.classList.add("recipe-item");
       liElement.addEventListener("click", () => {
-        const editRecipesContainer = document.getElementById("edit-recipe");
         editRecipesContainer.style.display = "block";
-        const editTitle = document.getElementById("show-recipe-title-input");
-        const editContent = document.getElementById(
-          "show-recipe-content-input"
-        );
-        const editUrl = document.getElementById("show-recipe-image-input");
         const imageToDisplayElement =
           document.getElementById("image-to-display");
         editTitle.value = recipe.title;
@@ -82,9 +81,16 @@ const main = () => {
       });
   };
 
+  const handleRecipeEdit = (event) => {
+    event.preventDefault();
+    console.log(editTitle.value);
+    // to do: save the edited recipe to the json server.
+  };
   const createDrinkForm = document.getElementById("create-recipe-form");
+  const editDrinkForm = document.getElementById("edit-recipe-form");
 
   createDrinkForm.addEventListener("submit", handleRecipeCreation);
+  editDrinkForm.addEventListener("submit", handleRecipeEdit);
 };
 
 document.addEventListener("DOMContentLoaded", init);
