@@ -1,4 +1,3 @@
-console.log("hello world");
 const init = () => {
   const isLegalAge = confirm("Are you 21 years or older?");
   if (isLegalAge) {
@@ -46,11 +45,7 @@ const main = () => {
     const title = document.getElementById("recipe-title-input");
     const content = document.getElementById("recipe-content-input");
     const image = document.getElementById("recipe-image-input");
-    console.log({
-      title: title.value,
-      content: content.value,
-      image: image.value,
-    });
+
     const dataToSend = {
       title: title.value,
       content: content.value,
@@ -66,7 +61,6 @@ const main = () => {
     })
       .then((res) => res.json())
       .then((createdRecipe) => {
-        console.log({ createdRecipe });
         renderRecipe(createdRecipe);
       });
   };
