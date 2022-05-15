@@ -1,3 +1,6 @@
+#app {
+  display: flex;
+}
 .recipe-item:hover {
   cursor: pointer;
   color: red;
