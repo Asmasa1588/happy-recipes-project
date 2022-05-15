@@ -16,6 +16,7 @@ const main = () => {
   const editTitle = document.getElementById("show-recipe-title-input");
   const editContent = document.getElementById("show-recipe-content-input");
   const editUrl = document.getElementById("show-recipe-image-input");
+  let currentlyViewedRecipeId = undefined;
 
   const renderRecipe = (recipe, filterText) => {
     const shouldRenderRecipe =
@@ -32,6 +33,7 @@ const main = () => {
         editContent.value = recipe.content;
         editUrl.value = recipe.img;
         imageToDisplayElement.setAttribute("src", recipe.img);
+        currentlyViewedRecipeId = recipe.id;
       });
 
       recipesContainer.appendChild(liElement);
@@ -84,7 +86,24 @@ const main = () => {
   const handleRecipeEdit = (event) => {
     event.preventDefault();
     console.log(editTitle.value);
-    // to do: save the edited recipe to the json server.
+
+    const dataToSend = {
+      title: editTitle.value,
+      content: editContent.value,
+      image: editUrl.value,
+    };
+    fetch(`http://localhost:3000/recipes/${currentlyViewedRecipeId}`, {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "PUT",
+      body: JSON.stringify(dataToSend),
+    })
+      .then((res) => res.json())
+      .then((createdRecipe) => {
+        fetchBy();
+      });
   };
   const createDrinkForm = document.getElementById("create-recipe-form");
   const editDrinkForm = document.getElementById("edit-recipe-form");
