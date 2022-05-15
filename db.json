@@ -29,12 +29,7 @@
       "content": "hello",
       "image": "abc",
       "id": 5
-    },
-    {
-      "title": "",
-      "content": "",
-      "image": "",
-      "id": 6
     }
+    
   ]
 }
