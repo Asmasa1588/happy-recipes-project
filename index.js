@@ -67,7 +67,7 @@ const main = () => {
     const dataToSend = {
       title: title.value,
       content: content.value,
-      image: image.value,
+      img: image.value,
     };
     fetch("http://localhost:3000/recipes", {
       headers: {
@@ -80,6 +80,9 @@ const main = () => {
       .then((res) => res.json())
       .then((createdRecipe) => {
         renderRecipe(createdRecipe);
+        title.value = "";
+        content.value = "";
+        image.value = "";
       });
   };
 
@@ -90,7 +93,7 @@ const main = () => {
     const dataToSend = {
       title: editTitle.value,
       content: editContent.value,
-      image: editUrl.value,
+      img: editUrl.value,
     };
     fetch(`http://localhost:3000/recipes/${currentlyViewedRecipeId}`, {
       headers: {
