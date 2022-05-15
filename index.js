@@ -101,7 +101,7 @@ const main = () => {
       body: JSON.stringify(dataToSend),
     })
       .then((res) => res.json())
-      .then((createdRecipe) => {
+      .then(() => {
         fetchBy();
       });
   };
