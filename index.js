@@ -26,7 +26,7 @@ const main = () => {
       liElement.innerHTML = recipe.title;
       liElement.classList.add("recipe-item");
       liElement.addEventListener("click", () => {
-        editRecipesContainer.style.display = "block";
+        editRecipesContainer.style.display = "none";
         const imageToDisplayElement =
           document.getElementById("image-to-display");
         editTitle.value = recipe.title;
@@ -34,6 +34,30 @@ const main = () => {
         editUrl.value = recipe.img;
         imageToDisplayElement.setAttribute("src", recipe.img);
         currentlyViewedRecipeId = recipe.id;
+
+        //this is for view
+
+        const viewRecipeContainer = document.getElementById("view-recipe");
+        viewRecipeContainer.style.display = "block";
+        viewRecipeContainer.innerHTML = "";
+        const titleToShow = document.createElement("h2");
+        titleToShow.innerHTML = recipe.title;
+        const contentToShow = document.createElement("p");
+        contentToShow.innerHTML = recipe.content;
+        const imageToShow = document.createElement("img");
+        imageToShow.setAttribute("src", recipe.img);
+        imageToShow.setAttribute("height", "100px");
+        imageToShow.setAttribute("width", "100px");
+        const editRecipeButton = document.createElement("button");
+        editRecipeButton.innerHTML = "Edit this Recipe";
+        editRecipeButton.addEventListener("click", () => {
+          viewRecipeContainer.style.display = "none";
+          editRecipesContainer.style.display = "block";
+        });
+        viewRecipeContainer.appendChild(titleToShow);
+        viewRecipeContainer.appendChild(contentToShow);
+        viewRecipeContainer.appendChild(imageToShow);
+        viewRecipeContainer.appendChild(editRecipeButton);
       });
 
       recipesContainer.appendChild(liElement);
