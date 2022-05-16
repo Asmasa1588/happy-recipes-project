@@ -81,9 +81,13 @@ const main = () => {
       });
   };
   fetchBy();
-  const recipeFilter = document.getElementById("recipe-filter");
-  recipeFilter.addEventListener("change", (event) => {
+  const recipeFilterInput = document.getElementById("recipe-filter");
+  recipeFilterInput.addEventListener("change", (event) => {
     fetchBy(event.target.value);
+  });
+  const recipeFilterButton = document.getElementById("recipe-filter-button");
+  recipeFilterButton.addEventListener("click", () => {
+    fetchBy(recipeFilterInput.value);
   });
   const handleRecipeCreation = (event) => {
     event.preventDefault();
