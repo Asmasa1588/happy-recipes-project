@@ -54,9 +54,12 @@ const main = () => {
           viewRecipeContainer.style.display = "none";
           editRecipesContainer.style.display = "block";
         });
-        viewRecipeContainer.appendChild(titleToShow);
-        viewRecipeContainer.appendChild(contentToShow);
-        viewRecipeContainer.appendChild(imageToShow);
+        const rectangleBoxElement = document.createElement("div");
+        rectangleBoxElement.classList.add("rectangle-box");
+        rectangleBoxElement.appendChild(titleToShow);
+        rectangleBoxElement.appendChild(contentToShow);
+        rectangleBoxElement.appendChild(imageToShow);
+        viewRecipeContainer.appendChild(rectangleBoxElement);
         viewRecipeContainer.appendChild(editRecipeButton);
       });
 

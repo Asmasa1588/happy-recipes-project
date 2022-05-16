@@ -10,10 +10,12 @@
 }
 
 #view-recipe {
-  border: 1px solid black;
   display: none;
   padding-left: 30px;
   padding-right: 30px;
   margin-left: 5px;
   margin-right: 5px;
+}
+.rectangle-box {
+  border: 1px solid black;
 }

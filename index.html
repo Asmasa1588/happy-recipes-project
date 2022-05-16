@@ -11,7 +11,6 @@
     <div id="app">
       <div>
         <input id="recipe-filter" />
-
         <ul id="recipes-container"></ul>
         <div>
           <h2>Create a Recipe</h2>
@@ -40,6 +39,7 @@
                 placeholder="Add an url"
               />
             </div>
+
             <div>
               <input type="submit" value="Create Recipe" />
             </div>
@@ -50,20 +50,22 @@
       <div id="edit-recipe">
         <h2>Edit Recipe</h2>
         <form id="edit-recipe-form">
-          <div>
-            <label>Title</label>
-            <input id="show-recipe-title-input" type="text" />
-          </div>
-          <div>
-            <label>Content</label>
-
-            <textarea id="show-recipe-content-input"></textarea>
-          </div>
-          <div>
-            <label>RecipeUrl</label>
-            <input id="show-recipe-image-input" type="text" />
+          <div class="rectangle-box">
             <div>
-              <img id="image-to-display" height="100px" width="100px" />
+              <label>Title</label>
+              <input id="show-recipe-title-input" type="text" />
+            </div>
+            <div>
+              <label>Content</label>
+
+              <textarea id="show-recipe-content-input"></textarea>
+            </div>
+            <div>
+              <label>RecipeUrl</label>
+              <input id="show-recipe-image-input" type="text" />
+              <div>
+                <img id="image-to-display" height="100px" width="100px" />
+              </div>
             </div>
           </div>
           <div>
