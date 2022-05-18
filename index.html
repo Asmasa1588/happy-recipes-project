@@ -17,34 +17,32 @@
         <div>
           <h2>Create a Recipe</h2>
           <form id="create-recipe-form">
-            <div>
-              <label>Title</label>
-              <input
-                id="recipe-title-input"
-                type="text"
-                placeholder="Add a title"
-              />
-            </div>
-            <div>
-              <label>Content</label>
+            <label>Title</label>
+            <input
+              class="input-element"
+              id="recipe-title-input"
+              type="text"
+              placeholder="Add a title"
+            />
 
-              <textarea
-                id="recipe-content-input"
-                placeholder="Add a content"
-              ></textarea>
-            </div>
-            <div>
-              <label>RecipeUrl</label>
-              <input
-                id="recipe-image-input"
-                type="text"
-                placeholder="Add an url"
-              />
-            </div>
+            <label>Content</label>
 
-            <div>
-              <input type="submit" value="Create Recipe" />
-            </div>
+            <textarea
+              class="input-element"
+              id="recipe-content-input"
+              placeholder="Add a content"
+              rows="8"
+            ></textarea>
+
+            <label>RecipeUrl</label>
+            <input
+              class="input-element"
+              id="recipe-image-input"
+              type="text"
+              placeholder="Add an url"
+            />
+
+            <input type="submit" value="Create Recipe" />
           </form>
         </div>
       </div>

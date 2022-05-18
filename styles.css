@@ -27,3 +27,13 @@ footer {
   bottom: 10px;
   width: 100%;
 }
+#create-recipe-form {
+  width: 500px;
+  clear: both;
+}
+
+#create-recipe-form .input-element {
+  width: 100%;
+  clear: both;
+  margin-bottom: 15px;
+}
