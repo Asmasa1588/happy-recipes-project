@@ -50,6 +50,8 @@ const main = () => {
         imageToShow.setAttribute("width", "100px");
         const editRecipeButton = document.createElement("button");
         editRecipeButton.innerHTML = "Edit this Recipe";
+        editRecipeButton.classList.add("edit-recipe-button");
+        editRecipeButton.style.marginLeft = "150px";
         editRecipeButton.addEventListener("click", () => {
           viewRecipeContainer.style.display = "none";
           editRecipesContainer.style.display = "block";
