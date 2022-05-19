@@ -46,8 +46,8 @@ const main = () => {
         contentToShow.innerHTML = recipe.content;
         const imageToShow = document.createElement("img");
         imageToShow.setAttribute("src", recipe.img);
-        imageToShow.setAttribute("height", "100px");
-        imageToShow.setAttribute("width", "100px");
+        imageToShow.setAttribute("height", "150px");
+        imageToShow.setAttribute("width", "150px");
         const editRecipeButton = document.createElement("button");
         editRecipeButton.innerHTML = "Edit this Recipe";
         editRecipeButton.classList.add("edit-recipe-button");

@@ -9,6 +9,10 @@
   display: none;
 }
 
+#edit-recipe h2 {
+  margin-left: 150px;
+}
+
 #view-recipe {
   display: none;
 }
@@ -21,6 +25,12 @@
   margin-left: 150px;
   width: 500px;
   height: 450px;
+}
+#edit-recipe-form .rectangle-box {
+  height: 350px;
+}
+#edit-recipe-form .edit-recipe-submit-button {
+  margin-left: 150px;
 }
 .rectangle-box .edit-recipe-button {
   margin-left: 150px;
