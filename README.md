@@ -18,8 +18,14 @@
 
 #### The application should look like this:
 
-![starting screen](./home-screen-shot.png)
+![starting screen](./home-screen-screenshot-2.png)
 
-<!-- #### After you click on recipe title,the application will look like this:
+#### After you click on recipe title,the application will look like this:
 
-![starting screen](./home-screen-shot.png) -->
+![View screen](./view-recipe-screenshot.png)
+
+#### When you click ont he Edit button, the app will display an edit view:
+
+![View screen](./edit-recipe-screenshot.png)
+
+#### The functionality for creating recipes is always available on the left side so that clients can create recipes before they have forgotten them.
