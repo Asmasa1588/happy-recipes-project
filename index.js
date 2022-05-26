@@ -68,7 +68,7 @@ const main = () => {
       recipesContainer.appendChild(liElement);
     }
   };
-  const fetchBy = (searchTerm) => {
+  const fetchBySearchTerm = (searchTerm) => {
     fetch("http://localhost:3000/recipes")
       .then((res) => res.json())
       .then((data) => {
@@ -82,14 +82,14 @@ const main = () => {
         });
       });
   };
-  fetchBy();
+  fetchBySearchTerm();
   const recipeFilterInput = document.getElementById("recipe-filter");
   recipeFilterInput.addEventListener("change", (event) => {
-    fetchBy(event.target.value);
+    fetchBySearchTerm(event.target.value);
   });
   const recipeFilterButton = document.getElementById("recipe-filter-button");
   recipeFilterButton.addEventListener("click", () => {
-    fetchBy(recipeFilterInput.value);
+    fetchBySearchTerm(recipeFilterInput.value);
   });
   const handleRecipeCreation = (event) => {
     event.preventDefault();
@@ -138,7 +138,7 @@ const main = () => {
     })
       .then((res) => res.json())
       .then(() => {
-        fetchBy();
+        fetchBySearchTerm();
       });
   };
   const createDrinkForm = document.getElementById("create-recipe-form");
