@@ -2,10 +2,9 @@
   "recipes": [
     {
       "title": "French 75",
-      "content": "Fill a cocktail shaker three-fourths full with ice. Add 3/4 of an ounce of gin, 1 tablespoon of confectioners’ sugar or simple syrup and 2 teaspoons of lemon juice; cover and shake 10-15 seconds or until condensation forms on the outside of the shaker. Strain into a flute glass and top with champagne. Yield: 1 serving.",
-      
+      "content": "Sprinkle a thin layer of sugar on a plate. Moisten the rim of a chilled champagne flute with water; hold glass upside down and dip rim into sugar.Fill a shaker three-fourths full with ice. Add gin, confectioners' sugar and lemon juice; cover and shake until condensation forms on outside of shaker, 10-15 seconds. Strain into prepared flute; top with champagne",
       "img": "https://www.tasteofhome.com/wp-content/uploads/2019/08/shutterstock_690249295.jpg?w=1200",
-      "id":1
+      "id": 1
     },
     {
       "title": "Moscow Mule",
@@ -19,5 +18,7 @@
       "img": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Passion-Fruit-Hurricanes_EXPS_JMZ18_37571_C03_14_8b-3.jpg?w=1200",
       "id": 3
     }
+    
+      
   ]
 }
