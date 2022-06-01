@@ -27,6 +27,17 @@
   height: 450px;
   font-size: 20px;
 }
+.view-rectangle-box {
+  border: 1px solid black;
+  padding-left: 30px;
+  padding-right: 30px;
+  /* margin-left: 5px; */
+  margin-right: 5px;
+  margin-left: 50px;
+  width: 500px;
+  height: 450px;
+  font-size: 20px;
+}
 #edit-recipe-form .rectangle-box {
   height: 350px;
 }

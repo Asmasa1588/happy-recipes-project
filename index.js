@@ -22,6 +22,7 @@ const main = () => {
     const shouldRenderRecipe =
       (filterText && recipe.title.includes(filterText)) || !filterText;
     if (shouldRenderRecipe) {
+      // console.log(editUrl)
       const liElement = document.createElement("li");
       liElement.innerHTML = recipe.title;
       liElement.classList.add("recipe-item");
@@ -38,7 +39,7 @@ const main = () => {
         //this is for view
 
         const viewRecipeContainer = document.getElementById("view-recipe");
-        viewRecipeContainer.style.display = "block";
+        viewRecipeContainer.style.display = "flex";
         viewRecipeContainer.innerHTML = "";
         const titleToShow = document.createElement("h2");
         titleToShow.innerHTML = recipe.title;
@@ -51,18 +52,99 @@ const main = () => {
         const editRecipeButton = document.createElement("button");
         editRecipeButton.innerHTML = "Edit this Recipe";
         editRecipeButton.classList.add("edit-recipe-button");
-        editRecipeButton.style.marginLeft = "150px";
+        editRecipeButton.style.marginLeft = "50px";
         editRecipeButton.addEventListener("click", () => {
           viewRecipeContainer.style.display = "none";
           editRecipesContainer.style.display = "block";
         });
         const rectangleBoxElement = document.createElement("div");
         rectangleBoxElement.classList.add("rectangle-box");
+        rectangleBoxElement.classList.add("view-rectangle-box");
+
+        const commentSection = document.createElement("div");
+
+        commentSection.classList.add("comment-section");
+        const createCommentForm = document.createElement("form");
+        const authorLabel = document.createElement("label");
+        authorLabel.innerHTML = "author";
+        const authorInput = document.createElement("input");
+        const commentLabel = document.createElement("label");
+        commentLabel.innerHTML = "Your comment ";
+        const brTag = document.createElement("br");
+        const brTag2 = document.createElement("br");
+        const commentInput = document.createElement("textarea");
+        commentInput.setAttribute("rows", "3");
+        const submitCommentButton = document.createElement("input");
+        submitCommentButton.setAttribute("type", "submit");
+        submitCommentButton.setAttribute("value", "submit comments");
+
+        createCommentForm.addEventListener("submit", (commentSubmitEvent) => {
+          commentSubmitEvent.preventDefault();
+          const author = commentSubmitEvent.path[0][0].value;
+          const commentContent = commentSubmitEvent.path[0][1].value;
+
+          fetch(`http://localhost:3000/recipes/${currentlyViewedRecipeId}`, {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+          })
+            .then((res) => res.json())
+            .then((recipe) => {
+              const dataToSend = {
+                ...recipe,
+                comments: [
+                  ...(recipe.comments || []),
+                  {
+                    author,
+                    commentContent,
+                  },
+                ],
+              };
+              console.log({
+                commentSubmitEvent,
+                author,
+                commentContent,
+                currentlyViewedRecipeId,
+                dataToSend,
+              });
+              fetch(
+                `http://localhost:3000/recipes/${currentlyViewedRecipeId}`,
+                {
+                  headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                  },
+                  method: "PUT",
+                  body: JSON.stringify(dataToSend),
+                }
+              )
+                .then((res) => res.json())
+                .then(() => {
+                  fetchBySearchTerm();
+                });
+            });
+        });
+        createCommentForm.appendChild(authorLabel);
+        createCommentForm.appendChild(authorInput);
+        createCommentForm.appendChild(brTag);
+        createCommentForm.appendChild(commentLabel);
+        createCommentForm.appendChild(commentInput);
+        createCommentForm.appendChild(brTag2);
+        createCommentForm.appendChild(submitCommentButton);
+        commentSection.appendChild(createCommentForm);
+
         rectangleBoxElement.appendChild(titleToShow);
         rectangleBoxElement.appendChild(contentToShow);
         rectangleBoxElement.appendChild(imageToShow);
-        viewRecipeContainer.appendChild(rectangleBoxElement);
-        viewRecipeContainer.appendChild(editRecipeButton);
+        rectangleBoxElement.style.width = "220px";
+        const rectangleBoxWrapper = document.createElement("div");
+        rectangleBoxWrapper.appendChild(rectangleBoxElement);
+        rectangleBoxWrapper.appendChild(editRecipeButton);
+
+        viewRecipeContainer.appendChild(rectangleBoxWrapper);
+
+        viewRecipeContainer.appendChild(commentSection);
       });
 
       recipesContainer.appendChild(liElement);
