@@ -2,54 +2,39 @@
   "recipes": [
     {
       "title": "French 75",
-      "content": "Sprinkle a thin layer of sugar on a plate. Moisten the rim of a chilled champagne flute with water; hold glass upside down and dip rim into sugar.Fill a shaker three-fourths full with ice. Add gin, confectioners' sugar and lemon juice; cover and shake until condensation forms on outside of shaker, 10-15 seconds. Strain into prepared flute; top with champagne.",
+      "content": "Sprinkle a thin layer of sugar on a plate.  Add gin, confectioners' sugar and lemon juice; cover and shake until condensation forms on outside of shaker, 10-15 seconds.",
       "img": "https://www.tasteofhome.com/wp-content/uploads/2019/08/shutterstock_690249295.jpg?w=1200",
       "id": 1,
       "comments": [
         {
           "author": "asma",
           "commentContent": "test"
-        },
-        {
-          "author": "jupiter",
-          "commentContent": "test"
-        },
-        {
-          "author": "gypsy",
-          "commentContent": "gypsy bb"
         }
       ]
     },
     {
       "title": "Moscow Mule",
-      "content": " Combine 4 cups ginger beer, 2/3 cup lime juice and 1-1/4 cups vodka in a pitcher. Serve over ice. If desired, serve with lime slices. Yield: 6 servings.",
+      "content": " Combine 4 cups ginger beer, 2/3 cup lime juice and 1-1/4 cups vodka in a pitcher. Serve over ice. ",
       "img": "https://www.tasteofhome.com/wp-content/uploads/2018/01/exps166450_HC173837B03_04_10b.jpg?fit=700,1024",
       "id": 2,
       "comments": [
         {
-          "author": "as",
-          "commentContent": "bn"
-        },
-        {
-          "author": "nn",
-          "commentContent": "fgfd"
-        },
-        {
-          "author": "bb",
-          "commentContent": "efd"
+          "author": "Gypsy",
+          "commentContent": "Awesome"
         }
       ]
     },
     {
       "title": "Passion Fruit Hurricanes",
-      "content": "In a pitcher, combine 2 cups of passion fruit juice, 1 cup plus 2 tablespoons of sugar, 3/4 cup of lime juice, 3/4 cup of light rum, 3/4 cup of dark rum and 3 tablespoons of grenadine; stir until sugar is dissolved. Then, add ice to 6 hurricane or highball glasses and evenly divide the cocktail between the glasses. Yield: 6 servings.",
+      "content": "In a pitcher, combine 2 cups of passion fruit juice, 1 cup plus 2 tablespoons of sugar, 3/4 cup of lime juice, 3/4 cup of light rum, 3/4 cup of dark rum and 3 tablespoons of grenadine;",
       "img": "https://www.tasteofhome.com/wp-content/uploads/2018/01/Passion-Fruit-Hurricanes_EXPS_JMZ18_37571_C03_14_8b-3.jpg?w=1200",
       "id": 3,
       "comments": [
         {
-          "author": "mn",
-          "commentContent": "lk"
+          "author": "Becky",
+          "commentContent": "Love"
         }
+        
       ]
     }
   ]
