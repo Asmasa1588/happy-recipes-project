@@ -65,3 +65,7 @@ footer {
   clear: both;
   margin-bottom: 15px;
 }
+
+.comment-content {
+  margin-bottom: 20px;
+}

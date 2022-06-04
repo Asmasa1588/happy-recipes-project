@@ -37,6 +37,7 @@ const main = () => {
         currentlyViewedRecipeId = recipe.id;
 
         //this is for view
+        const commentsListWrapper = document.createElement("div");
 
         const viewRecipeContainer = document.getElementById("view-recipe");
         viewRecipeContainer.style.display = "flex";
@@ -77,18 +78,34 @@ const main = () => {
         const submitCommentButton = document.createElement("input");
         submitCommentButton.setAttribute("type", "submit");
         submitCommentButton.setAttribute("value", "submit comments");
+        const renderComments = () => {
+          fetch(`http://localhost:3000/recipes/`)
+            .then((res) => res.json())
+            .then((recipes) => {
+              const commentsList = recipes
+                .filter((recipe) => recipe.id == currentlyViewedRecipeId)
+                .map((recipe) => {
+                  const comments = recipe.comments || [];
+                  return comments
+                    .map(
+                      (comment) =>
+                        `<div class="comment-view-item"><div><b>${comment.author}</b></div><div class="comment-content">${comment.commentContent}</div></div>`
+                    )
+                    .join("");
+                })
+                .join("");
+
+              commentsListWrapper.innerHTML = `<div class="comments-list-wrapper"><h3>Comments</h3>${commentsList}</div>`;
+            });
+        };
+        renderComments();
 
         createCommentForm.addEventListener("submit", (commentSubmitEvent) => {
           commentSubmitEvent.preventDefault();
           const author = commentSubmitEvent.path[0][0].value;
           const commentContent = commentSubmitEvent.path[0][1].value;
 
-          fetch(`http://localhost:3000/recipes/${currentlyViewedRecipeId}`, {
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-          })
+          fetch(`http://localhost:3000/recipes/${currentlyViewedRecipeId}`)
             .then((res) => res.json())
             .then((recipe) => {
               const dataToSend = {
@@ -120,8 +137,16 @@ const main = () => {
                 }
               )
                 .then((res) => res.json())
-                .then(() => {
-                  fetchBySearchTerm();
+                .then((res) => {
+                  renderComments();
+                  commentSubmitEvent.path[0][0].value = "";
+                  commentSubmitEvent.path[0][1].value = "";
+                  // fetchBySearchTerm();
+                  // console.log({
+                  //   res,
+                  //   currentlyViewedRecipeId,
+                  // });
+                  // const receiveComments = res
                 });
             });
         });
@@ -133,6 +158,8 @@ const main = () => {
         createCommentForm.appendChild(brTag2);
         createCommentForm.appendChild(submitCommentButton);
         commentSection.appendChild(createCommentForm);
+
+        commentSection.appendChild(commentsListWrapper);
 
         rectangleBoxElement.appendChild(titleToShow);
         rectangleBoxElement.appendChild(contentToShow);
